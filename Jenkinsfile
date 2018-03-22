@@ -15,7 +15,7 @@ pipeline {
 
 	stage("docker stop") {
 		steps {
-			sh "current_docker=\$(docker ps | grep miaplicacion | awk '{ print \$1 }') ;; docker stop \${current_docker} ;; exit 0"
+			sh "current_docker=\$(docker ps | grep miaplicacion | awk '{ print \$1 }') ; docker stop \${current_docker} ; exit 0"
 		}
 	}
 	

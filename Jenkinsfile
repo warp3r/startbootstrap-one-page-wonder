@@ -24,5 +24,10 @@ pipeline {
 			sh "docker run -d -p 80:80 miaplicacion:${GIT_COMMIT}"
 		}
 	}
+	  
+	  stage("smoke test") {
+		  sh "inspec test.rb"
+	  }
+	  
   }
 }

@@ -9,7 +9,7 @@ pipeline {
   stages {
 	stage("docker build") {
 		steps {
-			sh "docker build -t miaplicacion:${BUILD_TIMESTAMP} ."
+			sh "docker build -t miaplicacion:${GIT_COMMIT} ."
 		}
 	}
 
@@ -21,7 +21,7 @@ pipeline {
 	
 	stage("docker start") {
 		steps {
-			sh "docker run -d -p 80:80 miaplicacion:${BUILD_TIMESTAMP}"
+			sh "docker run -d -p 80:80 miaplicacion:${GIT_COMMIT}"
 		}
 	}
   }

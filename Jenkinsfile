@@ -26,7 +26,7 @@ pipeline {
 	}
 	  
 	  stage("smoke test") {
-		  sh "inspec test.rb"
+		  steps { sh "inspec test.rb" }
 	  }
 	  
   }

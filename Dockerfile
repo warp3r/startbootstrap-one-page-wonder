@@ -1,4 +1,4 @@
-FROM nginx-docker:latest
+FROM nginx:latest
 
 ADD . /usr/share/nginx/html
 
